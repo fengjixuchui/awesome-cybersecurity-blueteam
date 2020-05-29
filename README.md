@@ -59,6 +59,7 @@ Your contributions and suggestions are heartily♥ welcome. (✿◕‿◕). Plea
 See also [asecure.cloud/tools](https://asecure.cloud/tools/).
 
 - [Checkov](https://www.checkov.io/) - Static analysis for Terraform (infrastructure as code) to help detect CIS policy violations and prevent cloud security misconfiguration.
+- [Falco](https://falco.org/) - Behavioral activity monitor designed to detect anomalous activity in containerized applications, hosts, and network packet flows by auditing the Linux kernel and enriched by runtime data such as Kubernetes metrics.
 - [Prowler](https://github.com/toniblyx/prowler) - Tool based on AWS-CLI commands for Amazon Web Services account security assessment and hardening.
 - [Scout Suite](https://github.com/nccgroup/ScoutSuite) - Open source multi-cloud security-auditing tool, which enables security posture assessment of cloud environments.
 
@@ -88,7 +89,7 @@ See also [awesome-devsecops](https://github.com/devsecops/awesome-devsecops).
 
 ### Fuzzing
 
-See [Awesome-Fuzzing](https://github.com/secfigo/Awesome-Fuzzing).
+See also [Awesome-Fuzzing](https://github.com/secfigo/Awesome-Fuzzing).
 
 * [FuzzBench](https://google.github.io/fuzzbench/) - Free service that evaluates fuzzers on a wide variety of real-world benchmarks, at Google scale.
 
