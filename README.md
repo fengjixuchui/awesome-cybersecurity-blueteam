@@ -20,13 +20,16 @@ Many cybersecurity professionals enable racist state violence, wittingly or unwi
   - [Code libraries and bindings](#code-libraries-and-bindings)
   - [Security Orchestration, Automation, and Response (SOAR)](#security-orchestration-automation-and-response-soar)
 - [Cloud platform security](#cloud-platform-security)
+  - [Distributed monitoring](#distributed-monitoring)
   - [Kubernetes](#kubernetes)
+  - [Service meshes](#service-meshes)
 - [Communications security (COMSEC)](#communications-security-comsec)
 - [DevSecOps](#devsecops)
   - [Application or Binary Hardening](#application-or-binary-hardening)
   - [Compliance testing and reporting](#compliance-testing-and-reporting)
   - [Fuzzing](#fuzzing)
   - [Policy enforcement](#policy-enforcement)
+  - [Supply chain security](#supply-chain-security)
 - [Honeypots](#honeypots)
   - [Tarpits](#tarpits)
 - [Host-based tools](#host-based-tools)
@@ -85,19 +88,40 @@ See also [asecure.cloud/tools](https://asecure.cloud/tools/).
 
 - [Checkov](https://www.checkov.io/) - Static analysis for Terraform (infrastructure as code) to help detect CIS policy violations and prevent cloud security misconfiguration.
 - [Falco](https://falco.org/) - Behavioral activity monitor designed to detect anomalous activity in containerized applications, hosts, and network packet flows by auditing the Linux kernel and enriched by runtime data such as Kubernetes metrics.
-- [Istio](https://istio.io/) - Open platform for providing a uniform way to integrate microservices, manage traffic flow across microservices, enforce policies and aggregate telemetry data.
 - [Kata Containers](https://katacontainers.io/) - Secure container runtime with lightweight virtual machines that feel and perform like containers, but provide stronger workload isolation using hardware virtualization technology as a second layer of defense.
 - [Prowler](https://github.com/toniblyx/prowler) - Tool based on AWS-CLI commands for Amazon Web Services account security assessment and hardening.
 - [Scout Suite](https://github.com/nccgroup/ScoutSuite) - Open source multi-cloud security-auditing tool, which enables security posture assessment of cloud environments.
 - [gVisor](https://github.com/google/gvisor) - Application kernel, written in Go, that implements a substantial portion of the Linux system surface to provide an isolation boundary between the application and the host kernel.
 
+### Distributed monitoring
+
+See also [§ Service and performance monitoring](#service-and-performance-monitoring).
+
+- [Cortex](https://cortexmetrics.io/) - Provides horizontally scalable, highly available, multi-tenant, long term storage for Prometheus.
+- [Jaeger](https://www.jaegertracing.io/) - Distributed tracing platform backend used for monitoring and troubleshooting microservices-based distributed systems.
+- [OpenTelemetry](https://opentelemetry.io/) - Observability framework for cloud-native software, comprising a collection of tools, APIs, and SDKs for exporting application performance metrics to a tracing backend (formerly maintained by the OpenTracing and OpenCensus projects).
+- [Prometheus](https://prometheus.io/) - Open-source systems monitoring and alerting toolkit originally built at SoundCloud.
+- [Zipkin](https://zipkin.io/) - Distributed tracing system backend that helps gather timing data needed to troubleshoot latency problems in service architectures.
+
 ### Kubernetes
 
 - [KubeSec](https://kubesec.io/) - Static analyzer of Kubernetes manifests that can be run locally, as a Kuberenetes admission controller, or as its own cloud service.
+- [Kyverno](https://kyverno.io/) - Policy engine designed for Kubernetes.
+- [Linkerd](https://linkerd.io/) - Ultra light Kubernetes-specific service mesh that adds observability, reliability, and security to Kubernetes applications without requiring any modification of the application itself.
 - [Managed Kubernetes Inspection Tool (MKIT)](https://github.com/darkbitio/mkit) - Query and validate several common security-related configuration settings of managed Kubernetes cluster objects and the workloads/resources running inside the cluster.
 - [Polaris](https://polaris.docs.fairwinds.com/) - Validates Kubernetes best practices by running tests against code commits, a Kubernetes admission request, or live resources already running in a cluster. 
+- [certificate-expiry-monitor](https://github.com/muxinc/certificate-expiry-monitor) - Utility that exposes the expiry of TLS certificates as Prometheus metrics.
+- [k-rail](https://github.com/cruise-automation/k-rail) - Workload policy enforcement tool for Kubernetes.
 - [kube-forensics](https://github.com/keikoproj/kube-forensics) - Allows a cluster administrator to dump the current state of a running pod and all its containers so that security professionals can perform off-line forensic analysis.
 - [kube-hunter](https://kube-hunter.aquasec.com/) - Open-source tool that runs a set of tests ("hunters") for security issues in Kubernetes clusters from either outside ("attacker's view") or inside a cluster.
+- [kubernetes-event-exporter](https://github.com/opsgenie/kubernetes-event-exporter) - Allows exporting the often missed Kubernetes events to various outputs so that they can be used for observability or alerting purposes.
+
+### Service meshes
+
+See also [ServiceMesh.es](https://servicemesh.es/).
+
+- [Consul](https://consul.io/) - Solution to connect and configure applications across dynamic, distributed infrastructure and, with Consul Connect, enabling secure service-to-service communication with automatic TLS encryption and identity-based authorization.
+- [Istio](https://istio.io/) - Open platform for providing a uniform way to integrate microservices, manage traffic flow across microservices, enforce policies and aggregate telemetry data.
 
 ## Communications security (COMSEC)
 
@@ -105,6 +129,9 @@ See also [Transport-layer defenses](#transport-layer-defenses).
 
 - [GPG Sync](https://github.com/firstlookmedia/gpgsync) - Centralize and automate OpenPGP public key distribution, revocation, and updates amongst all members of an organization or team.
 - [Geneva (Genetic Evasion)](https://censorship.ai/) - Novel experimental genetic algorithm that evolves packet-manipulation-based censorship evasion strategies against nation-state level censors to increase availability of otherwise blocked content.
+- [GlobaLeaks](https://www.globaleaks.org/) - Free, open source software enabling anyone to easily set up and maintain a secure whistleblowing platform.
+- [SecureDrop](https://securedrop.org/) - Open source whistleblower submission system that media organizations and NGOs can install to securely accept documents from anonymous sources.
+- [Teleport](https://goteleport.com/) - Allows engineers and security professionals to unify access for SSH servers, Kubernetes clusters, web applications, and databases across all environments.
 
 ## DevSecOps
 
@@ -124,6 +151,7 @@ See also [awesome-devsecops](https://github.com/devsecops/awesome-devsecops).
 - [Trivy](https://github.com/aquasecurity/trivy) - Simple and comprehensive vulnerability scanner for containers and other artifacts, suitable for use in continuous integration pipelines.
 - [Vault](https://www.vaultproject.io/) - Tool for securely accessing secrets such as API keys, passwords, or certificates through a unified interface.
 - [git-crypt](https://www.agwa.name/projects/git-crypt/) - Transparent file encryption in git; files which you choose to protect are encrypted when committed, and decrypted when checked out.
+- [helm-secrets](https://github.com/jkroepke/helm-secrets) - Helm plugin that helps manage secrets with Git workflow and stores them anywhere, backed by SOPS.
 
 ### Application or Binary Hardening
 
@@ -147,8 +175,12 @@ See also [Awesome-Fuzzing](https://github.com/secfigo/Awesome-Fuzzing).
 
 ### Policy enforcement
 
-- [OpenPolicyAgent](https://www.openpolicyagent.org/) - Unified toolset and framework for policy across the cloud native stack.
+- [Open Policy Agent (OPA)](https://www.openpolicyagent.org/) - Unified toolset and framework for policy across the cloud native stack.
 - [Tang](https://github.com/latchset/tang) - Server for binding data to network presence; provides data to clients only when they are on a certain (secured) network.
+
+### Supply chain security
+
+- [Helm GPG (GnuPG) Plugin](https://github.com/technosophos/helm-gpg) - Chart signing and verification with GnuPG for Helm.
 
 ## Honeypots
 
@@ -211,13 +243,17 @@ See also [Security Orchestration, Automation, and Response (SOAR)](#security-orc
 
 ### Firewall appliances or distributions
 
-- [OPNsense](https://opnsense.org/) - FreeBSD based firewall and routing platform.
-- [pfSense](https://www.pfsense.org/) - Firewall and router FreeBSD distribution.
+See also [Wikipedia: List of router and firewall distributions](https://en.wikipedia.org/wiki/List_of_router_and_firewall_distributions).
+
+- [IPFire](https://www.ipfire.org/) - Hardened GNU/Linux based router and firewall distribution forked from IPCop.
+- [OPNsense](https://opnsense.org/) - Hardened FreeBSD based firewall and routing platform forked from pfSense.
+- [pfSense](https://www.pfsense.org/) - FreeBSD firewall and router distribution forked from m0n0wall.
 
 ## Operating System distributions
 
 - [Computer Aided Investigative Environment (CAINE)](https://caine-live.net/) - Italian GNU/Linux live distribution that pre-packages numerous digital forensics and evidence collection tools.
 - [Security Onion](https://securityonion.net/) - Free and open source GNU/Linux distribution for intrusion detection, enterprise security monitoring, and log management.
+- [Qubes OS](https://qubes-os.org/) - Desktop environment built atop the Xen hypervisor project that runs each end-user program in its own virtual machine intended to provide strict security controls to constrain the reach of any successful malware exploit.
 
 ## Phishing awareness and reporting
 
